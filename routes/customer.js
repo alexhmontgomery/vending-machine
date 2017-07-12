@@ -18,7 +18,6 @@ router.get('/api/customer/items', function (req, res) {
 // Allows customer to purchase an item
 router.post('/api/customer/items/:itemId/purchases', function (req, res) {
   let moneyInput = req.body.moneyGiven
-  // let moneyInput = 5
 
   Item.findOne({
     _id: req.params.itemId

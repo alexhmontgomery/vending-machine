@@ -43,7 +43,7 @@ router.put('/api/vendor/items/:itemId', function (req, res) {
 router.get('/api/vendor/money', function (req, res) {
   Machine.findOne()
   .then(function (machine) {
-    res.json({'Money in Machine': machine.totalMoney})
+    res.json({totalMoney: machine.totalMoney})
   })
   .catch(function (error) {
     res.status(400).json(error)

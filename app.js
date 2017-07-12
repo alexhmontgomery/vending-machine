@@ -5,7 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const vendorRoutes = require('./routes/vendor')
 const customerRoutes = require('./routes/customer')
-// const Machine = require('./models/schema.js').Machine
+const Machine = require('./models/schema.js').Machine
 
 app.engine('mustache', mustache())
 app.set('view engine', 'mustache')
@@ -19,18 +19,18 @@ app.listen(3000, function () {
 })
 
 // Initialize the machine collection:
-// var machine = new Machine()
-// machine.totalMoney = 0
-// machine.log.push({
-//   status: 'Success',
-//   data: {
-//     item: 'Food',
-//     moneyInput: 0,
-//     changeGiven: 0,
-//     time: Date.now
-//   }
-// })
-// machine.save()
+var machine = new Machine()
+machine.totalMoney = 0
+machine.log.push({
+  status: 'Success',
+  data: {
+    item: 'Food',
+    moneyInput: 0,
+    changeGiven: 0,
+    time: Date.now
+  }
+})
+machine.save()
 
 app.use(customerRoutes)
 app.use(vendorRoutes)
