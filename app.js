@@ -5,7 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const vendorRoutes = require('./routes/vendor')
 const customerRoutes = require('./routes/customer')
-const Machine = require('./models/schema.js').Machine
+// const Machine = require('./models/schema.js').Machine
 
 app.engine('mustache', mustache())
 app.set('view engine', 'mustache')
