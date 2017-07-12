@@ -1,7 +1,7 @@
 const chai = require('chai')
 const assert = chai.assert
 const request = require('supertest')
-const app = require('../app.js')
+const app = require('../app')
 
 // TODO:
 // A customer should be able to buy an item using money
@@ -19,7 +19,7 @@ describe('items list', function () {
     request(app)
       .get('/api/customer/items')
       .expect(200)
-      .expect('content-type', /json/)
+      .expect('content-type', 'application/json; charset=utf-8')
       .end(done)
   })
 })
